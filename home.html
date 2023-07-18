@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Dude!</title>
+    <title>Hi there!</title>
 
     <style>
         body {
             font-family: Courier, monospace;
             text-align: center;
             margin: 0 auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        iframe {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        iframe::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            iframe {
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
-<body>
-    <h1>
-        I am a full stack web developer now!
-    </h1>
 
-    <iframe src="https://www.frederic-rieg.de" name="myIFrame" width="90%" height="500px" style="border: solid #000000;"></iframe>
+<body>
+    <div class="container">
+        <h1>
+            I am a full stack web developer now 🤖
+        </h1>
+    
+        <iframe src="https://www.frederic-rieg.de" name="myIFrame" width="90%" height="100%"
+            style="border: solid #000000;"></iframe>
+    </div>
 </body>
+
 </html>
