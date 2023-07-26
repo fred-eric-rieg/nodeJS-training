@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!!!');
 });
 
-app.get('/api/courses', async (req, res) => {
+app.get('/intranet', async (req, res) => {
     res.send( await readFile('mosh_coding/index.html', 'utf8') );
 });
 
