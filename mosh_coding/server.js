@@ -1,8 +1,8 @@
-const Joi = require('joi');
+const { readFile } = require("fs").promises;
 const express = require('express');
 const app = express();
 
-app.use(express.json()); // Use that middleware in the request processing pipeline.
+//app.use(express.json()); // Use that middleware in the request processing pipeline.
 
 const courses = [
     { id: 1, name: 'course1' },
@@ -14,22 +14,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!!!');
 });
 
-app.get('/api/courses', (req, res) => {
-    res.send([courses]);
+app.get('/api/courses', async (req, res) => {
+    res.send( await readFile('mosh_coding/index.html', 'utf8') );
 });
 
 app.post('/api/courses', (req, res) => {
-    const schema = {
-        name: Joi.string().min(3).required()
-    };
-
-    const result = Joi.valid(req.body, schema);
-
-    if (result.error) { // 400 Bad Request
-        res.status(400).send(result.error.details[0].message);
-        return;
-    }
-
     const course = {
         id: courses.length + 1,
         name: req.body.name
