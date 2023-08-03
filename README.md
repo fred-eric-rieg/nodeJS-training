@@ -1,6 +1,6 @@
 #Node.js working example
 
-JavaScript | HTML | CSS | Google Cloud | Node.js
+##JavaScript | HTML | CSS | Google Cloud | Node.js
 
 This is a working example of a Node.js deployment on Google Cloud.
 It renders my homepage in an iFrame within a html file.
